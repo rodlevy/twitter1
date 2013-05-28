@@ -1,6 +1,9 @@
-<%@tweets.each do |tweet|%>
-  <%= tweet.text %>  <%= tweet.tweet_created %>
-  <br>
-<%end%>
+<div class='container'>
+
+<% @tweets.each do |tweet| %>
+  <%= erb :_tweet, :layout => false, :locals => { :tweet => tweet } %>
+<% end %>
+
+</div>
 
 

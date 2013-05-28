@@ -8,10 +8,6 @@ class TwitterUser < ActiveRecord::Base
 
   def stale?
     @average_time = ((self.tweets[0].tweet_created- self.tweets[9].tweet_created) / 3600) / 10
-    puts ''
-    puts ''
-    puts ''
-    puts @average_time
     ((Time.now() - self.tweets.first.created_at) / 60 ) > @average_time
   end
 
